@@ -16,7 +16,7 @@ public class Exercicio1 {
 		System.out.println("Enter rectangle width and height: ");
 		r.width = sc.nextDouble();
 		r.height = sc.nextDouble();
-		
+		/* 
 		System.out.println();
 		System.out.print("AREA = " + String.format("%.2f", r.area()));
 		
@@ -26,6 +26,10 @@ public class Exercicio1 {
 		System.out.println();
 		System.out.println("DIAGONAL = " + String.format("%.2f", r.diagonal()));
 		
+		*/
+
+		System.out.println(r);
+		//Não precisa chamar o toString, pois a linguagem implicitamente reconhece  que estamos em um print e está retornando String
 		
 		sc.close();
 	}

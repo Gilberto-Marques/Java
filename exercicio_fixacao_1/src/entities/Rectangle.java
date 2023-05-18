@@ -18,4 +18,9 @@ public class Rectangle {
 		double area = (Math.pow(width,2.0)) + (Math.pow(height,2.0 )) ;
 		return Math.sqrt(area);		
 	}
+	public String toString(){
+		return "Area: "+String.format("%.2f",area())
+			+ ", Perimeter: "+ String.format("%.2f",perimeter())
+			+", Diagonal: "+String.format("%.2f",diagonal()); 
+	}
 }
