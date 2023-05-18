@@ -29,7 +29,7 @@ public class Exercicio1 {
 		*/
 
 		System.out.println(r);
-		//Não precisa chamar o toString, pois a linguagem implicitamente reconhece  que estamos em um print e está retornando String
+		//Não precisa chamar o toString, pois a linguagem implicitamente reconhece  queestamos em um print e está retornando String
 		
 		sc.close();
 	}
