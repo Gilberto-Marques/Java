@@ -1,6 +1,7 @@
 package entities;
 
 public class Employee {
+	/* 
 	private Integer id;
 	private String name;
 	private Double salary;
@@ -12,6 +13,6 @@ public class Employee {
 	public void increaseSalaryPercentage(double percentage) {
 		
 	}
-	
+	*/
 
 }
