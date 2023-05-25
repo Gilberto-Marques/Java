@@ -13,10 +13,10 @@ public class Hotel {
 		System.out.println("How many rooms will be rented? ");
 		
 		int n = sc.nextInt();
-		Room[] r = new Room[10];
+		Room[] r = new Room[n];
 		
-		for(int i=1; i<=n; i++) {
-			System.out.printf("RENT #%d:",i);
+		for(int i=0; i< r.length; i++) {
+			System.out.printf("RENT #%d:",i+1);
 			System.out.println();
 			System.out.print("Name: ");
 			sc.nextLine();
@@ -25,23 +25,20 @@ public class Hotel {
 			String email = sc.next();
 			System.out.print("Room: ");
 			int room = sc.nextInt();
-			r[room] = new Room(name, email);
-
+			r[i] = new Room(name, email, room);
 		}
+
 		System.out.println();
 		System.out.println("Busy rooms: ");
 		
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<r.length; i++) {
 			if(r[i] != null) {
 				System.out.print(i+": "+r[i]);
 				System.out.println();
-				
-			}
-			
+			}		
 		}
 		
 		sc.close();
-
 	}
 
 }

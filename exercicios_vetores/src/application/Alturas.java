@@ -12,9 +12,11 @@ public class Alturas {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Quantas pessoas serao digitadas? ");
-		int n = sc.nextInt();
+		int qntPessoa = sc.nextInt();
 		
-		Pessoa[] vect = new Pessoa[n];
+		Pessoa[] vect = new Pessoa[qntPessoa];
+		int menor = 0;
+		 
 		for(int i=0; i<vect.length; i++) {
 			System.out.println("Dados da "+(i+1)+" pessoa:");
 			System.out.print("Nome: ");
@@ -23,43 +25,40 @@ public class Alturas {
 			System.out.print("Idade: ");
 			int idade = sc.nextInt();
 			
+			if(idade < 16){
+				menor ++;
+			}
+			
 			System.out.print("Altura: ");
 			double altura = sc.nextDouble();
 			
-			vect[i] = new Pessoa(nome, idade, altura);
-						
+			vect[i] = new Pessoa(nome, idade, altura);				
 		}
+		 
 		double soma = 0.0;
 		for(int i=0; i<vect.length; i++) {
-			soma += vect[i].getAltura();
-			
+			soma += vect[i].getAltura();	
 		}
+
 		double media = soma / vect.length;
 		System.out.printf("Altura media:%.2f ",media);
+
+		double porcentagem = (double)menor / vect.length * 100;
 		
-		double menor = 0;
-		for(int i=0; i<vect.length; i++) {
-			if(vect[i].getIdade() < 16) {
-				menor ++;								
-				
+			if(menor >= 1) {							
+				System.out.printf("\nPessoas com menos de 16 anos:%.2f %% \n",porcentagem);
+				System.out.println("Pessoas menores de 16 anos:\n");
+				for(int i = 0; i<vect.length; i++){
+					if(vect[i].getIdade() < 16){
+						System.out.println(vect[i].getNome());
+					}
+				}
+			}
+
+			else{
+				System.out.println("\nNão há pessoa menores de 16 anos");
 			}	
-		}
-		double porcentagem = menor / vect.length * 100;
-		
-		
-		System.out.println();
-		System.out.printf("Pessoas com menos de 16 anos:%.2f %% ",porcentagem);
-		System.out.println();
-		
-		for(int i=0; i<vect.length; i++) {
-			if(vect[i].getIdade() < 16) {
-				System.out.println(vect[i].getNome());								
-				
-			}	
-		}
-		
-		
+
 		sc.close();
 	}
-
 }
